@@ -4,30 +4,31 @@ import "./App.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
   return (
     <div>
       {/* <nav>
         <ul className="left">
           <li>
-            <a href="" className="left-text">E-kart</a>
+            <Link to="" className="left-text">E-kart</Link>
           </li>
         </ul>
         <ul className="right">
           <li>
-            <a href="">
+            <Link to="">
               <span className="shoppingCart">
                 <i className="fa fa-cart-plus"></i>
                 <span className="count">0</span>
               </span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav> */}
 
       <nav class="navbar navbar-expand-md bg-lights navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">
+        <Link class="navbar-brand" to="/home">
           E-kart
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -35,32 +36,32 @@ const Header = () => {
           data-target="#collapsibleNavbar"
         >
           <span class="navbar-toggler-icon"></span>
-          <a href="" className="shoppingCart">
+          <Link to="/cart" className="shoppingCart">
             {" "}
             <i className="fa fa-cart-plus">
-              <span className="count">2</span>
+              <span className="count">0</span>
             </i>
-          </a>
+          </Link>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/cart">
                 <i className="fa fa-cart-plus">
-                  <span className="count">2</span>
+                  <span className="count">0</span>
                 </i>
-              </a>
+              </Link>
             </li>
 
             {/* <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="#">
                 Link
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="#">
                 Link
-              </a>
+              </Link>
             </li> */}
           </ul>
         </div>

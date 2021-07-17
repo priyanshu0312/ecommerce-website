@@ -10,11 +10,10 @@ const home = () => {
     <div>
       <Header />
       <div className="container">
-        <img className="img-fluid" src="/images/banner.jpg"></img>
+        <img className="img-fluid" src="/images/shoppingbanner.jpg"></img>
       </div>
+      <br /> <br />
       <Product/>
-      <br />
-      <br /> <br /> <br /> <br />
       <Footer />
     </div>
   );

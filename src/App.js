@@ -3,36 +3,31 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Header from "./Header";
 import home from "./home";
-import productdetails from "./product-details";
 import Product from "./Product";
 import Footer from "./Footer";
 import Cart from "./Cart";
-import signUp from "./signUp";
 import ProductsContextProvider from "./Global/ProductsContext";
+import NotFound from "./NotFound";
+import CartContextProvider from "./Global/CartContext";
 
 class App extends React.Component {
   render() {
     return (
       <>
         <ProductsContextProvider>
-          <Router>
-            <div>
-              <Switch>
-                <Route exact path="/home" component={home} />
-                <Route
-                  exact
-                  path="/product-details"
-                  component={productdetails}
-                />
-                
-                <Route exact path="/header" component={Header} />
-                <Route exact path="/products" component={Product} />
-                <Route exact path="/cart" component={Cart} />
-                <Route exact path="/user-account" component={signUp} />
-                <Route exact path="*" component={home} />
-              </Switch>
-            </div>
-          </Router>
+          <CartContextProvider>
+            <Router>
+              <div>
+                <Switch>
+                  <Route exact path="/home" component={home} />
+                  <Route exact path="/products" component={Product} />
+                  <Route exact path="/cart" component={Cart} />
+                  <Route exact path="/not-found" component={NotFound} />
+                  <Route exact path="*" component={home} />
+                </Switch>
+              </div>
+            </Router>
+          </CartContextProvider>
         </ProductsContextProvider>
       </>
     );
