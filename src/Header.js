@@ -1,30 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./home.css";
 import "./App.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "./Global/CartContext";
 
 const Header = () => {
+  const { totalItem } = useContext(CartContext);
 
   return (
     <div>
-      {/* <nav>
-        <ul className="left">
-          <li>
-            <Link to="" className="left-text">E-kart</Link>
-          </li>
-        </ul>
-        <ul className="right">
-          <li>
-            <Link to="">
-              <span className="shoppingCart">
-                <i className="fa fa-cart-plus"></i>
-                <span className="count">0</span>
-              </span>
-            </Link>
-          </li>
-        </ul>
-      </nav> */}
-
+      
+      
       <nav class="navbar navbar-expand-md bg-lights navbar-dark fixed-top">
         <Link class="navbar-brand" to="/home">
           E-kart
@@ -39,7 +25,7 @@ const Header = () => {
           <Link to="/cart" className="shoppingCart">
             {" "}
             <i className="fa fa-cart-plus">
-              <span className="count">0</span>
+              <span className="count">{totalItem}</span>
             </i>
           </Link>
         </button>
@@ -48,21 +34,12 @@ const Header = () => {
             <li class="nav-item">
               <Link class="nav-link" to="/cart">
                 <i className="fa fa-cart-plus">
-                  <span className="count">0</span>
+                  <span className="count">{totalItem}</span>
                 </i>
               </Link>
             </li>
 
-            {/* <li class="nav-item">
-              <Link class="nav-link" to="#">
-                Link
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="#">
-                Link
-              </Link>
-            </li> */}
+          
           </ul>
         </div>
       </nav>

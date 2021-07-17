@@ -16,6 +16,7 @@
   color: var(--mainColor) !important;
   font-size: 24px;
 }
+
 /* nav {
   width: 100%;
   height: 70px;
@@ -75,12 +76,12 @@ a:hover {
   bottom: 20px;
   padding: 12px;
   width: 55% !important;
-  height: 45px;
+  height: 55px;
   margin-left: 5px;
   background-color: var(--mainColor);
   color: var(--whiteColor);
   border-radius: 50%;
-  line-height: 45px;
+  line-height: 55px;
   font-size: 12px;
 }
 .bannerCls {
@@ -195,6 +196,8 @@ a:hover {
 
 .cart-details {
   width: 75%;
+  margin-top: 70px;
+  float: left;
   border: 1px solid #fafafa;
   border-radius: 5px;
 }
@@ -376,5 +379,58 @@ a:hover {
     cursor: pointer;
     border: none;
     color: rgb(187, 58, 58);
+  }
+}
+/* cart summary */
+.cart-summary {
+  float: right;
+  margin-top: 70px;
+  width: 25%;
+  padding: 0 0 0 20px;
+}
+
+.summary {
+  background-color: var(--whiteColor);
+  padding: 13px;
+}
+.summary h3 {
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 1px solid #999;
+}
+.total-items {
+  display: flex;
+  margin: 15px 0;
+}
+.items {
+  width: 50%;
+  text-align: left;
+  font-weight: normal;
+}
+.items-count {
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+.total-price-section {
+  display: flex;
+  margin: 15px 0;
+}
+.just-title {
+  width: 50%;
+  text-align: left;
+  font-weight: normal;
+}
+.items-price {
+  width: 50%;
+  text-align: right;
+  color: var(--mainColor);
+  font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+  .cart-summary {
+    width: 100%;
+    padding: 0 0 0 20px;
   }
 }

@@ -23,7 +23,6 @@ export const CartReducer = (state, action) => {
     };
   }
   if (action.type === "INCREASE_ITEM") {
-
     let updatedCart = state.shoppingCart.map((curElem) => {
       if (curElem.id === action.payload) {
         return { ...curElem, quantity: curElem.quantity + 1 };
@@ -31,7 +30,6 @@ export const CartReducer = (state, action) => {
       return curElem;
     });
     return { ...state, shoppingCart: updatedCart };
-
   }
   if (action.type === "DECREASE_ITEM") {
     let updatedCart = state.shoppingCart
@@ -52,6 +50,24 @@ export const CartReducer = (state, action) => {
       ...state,
       shoppingCart: [],
     };
+  }
+  if (action.type === "GET_TOTAL") {
+    let { totalItem, totalAmount } = state.shoppingCart.reduce(
+      (accum, curVal) => {
+        let { price, quantity } = curVal;
+
+        let updatedTotalAmount = price * quantity;
+        accum.totalAmount += updatedTotalAmount;
+
+        accum.totalItem += quantity;
+        return accum;
+      },
+      {
+        totalItem: 0,
+        totalAmount: 0,
+      }
+    );
+    return { ...state, totalItem, totalAmount };
   }
   return state;
 };
