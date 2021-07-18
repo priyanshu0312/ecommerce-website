@@ -4,7 +4,9 @@ import { CartReducer } from "./CartReducer";
 export const CartContext = createContext();
 
 const initialState = {
-  shoppingCart: [],
+  shoppingCart: localStorage.getItem("shoppingCart")
+    ? JSON.parse(localStorage.getItem("shoppingCart"))
+    : [],
   totalAmount: 0,
   totalItem: 0,
   quantity: 1,
@@ -49,6 +51,10 @@ const CartContextProvider = (props) => {
       type: "GET_TOTAL",
     });
   }, [state.shoppingCart]);
+
+  useEffect(() => {
+    localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
+  }, [state]);
   return (
     <div>
       <CartContext.Provider

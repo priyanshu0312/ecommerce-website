@@ -431,6 +431,21 @@ a:hover {
 @media screen and (max-width: 800px) {
   .cart-summary {
     width: 100%;
+    margin-right: 10px;
     padding: 0 0 0 20px;
+  }
+  .items-count {
+    width: 50%;
+    padding-right: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: var(--mainColor);
+  }
+  .items-price {
+    width: 50%;
+    padding-right: 20px;
+    text-align: right;
+    color: var(--mainColor);
+    font-weight: bold;
   }
 }
